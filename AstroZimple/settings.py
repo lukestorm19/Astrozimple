@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'users',
     'APIs',
     'rest_framework',
-    'knox'
+    'knox',
+    'corsheaders',
     ]
 
 REST_FRAMEWORK={
@@ -56,9 +57,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'AstroZimple.urls'
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 TEMPLATES = [
     {
